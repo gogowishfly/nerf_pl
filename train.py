@@ -97,7 +97,7 @@ class NeRFSystem(LightningModule):
         return DataLoader(self.val_dataset,
                           shuffle=False,
                           num_workers=256,
-                          batch_size=8, # validate one image (H*W rays) at a time
+                          batch_size=1, # validate one image (H*W rays) at a time
                           pin_memory=True)
     
     def training_step(self, batch, batch_nb):
