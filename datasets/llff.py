@@ -80,7 +80,7 @@ def center_poses(poses):
     return poses_centered, np.linalg.inv(pose_avg_homo)
 
 
-def create_spiral_poses(radii, focus_depth, n_poses=54):
+def create_spiral_poses(radii, focus_depth, n_poses=120):
     """
     Computes poses that follow a spiral path for rendering purpose.
     See https://github.com/Fyusion/LLFF/issues/19
@@ -115,7 +115,7 @@ def create_spiral_poses(radii, focus_depth, n_poses=54):
     return np.stack(poses_spiral, 0) # (n_poses, 3, 4)
 
 
-def create_spheric_poses(radius, n_poses=54):
+def create_spheric_poses(radius, n_poses=120):
     """
     Create circular poses around z axis.
     Inputs:
